@@ -486,7 +486,7 @@ async def call_tool(name: str, arguments: dict[str, Any]) -> list[types.TextCont
         result = run_command(
             [COPILOT_BIN, "--model", model, "--effort", effort,
              "--allow-all-tools", "--silent", "-p", full_prompt],
-            timeout=180,
+            timeout=600,
         )
         output = result["stdout"]
 
@@ -530,7 +530,7 @@ async def call_tool(name: str, arguments: dict[str, Any]) -> list[types.TextCont
         result = run_command(
             [COPILOT_BIN, "--model", model, "--effort", effort,
              "--allow-all-tools", "--silent", "-p", full_prompt],
-            timeout=180,
+            timeout=600,
         )
         output = result["stdout"]
 
