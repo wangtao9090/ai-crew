@@ -384,7 +384,7 @@ async def list_tools() -> list[types.Tool]:
                         "type":        "string",
                         "description": (
                             "【必填，除非无项目上下文】当前项目的 docs 目录绝对路径，"
-                            "例如 '/Users/wangtao/Projects/Shooting_Cut/docs'。"
+                            "例如 '/Users/yourname/Projects/MyApp/docs'。"
                             "Claude 应根据当前工作项目自动填入，无需用户指定。"
                             "未传入时兜底写入 ~/.claude/research/。"
                         ),
