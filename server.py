@@ -180,7 +180,7 @@ def filter_stderr(stderr: str) -> str:
     return "\n".join(lines).strip()
 
 
-def run_command(cmd: list[str], timeout: int = 180) -> dict[str, str]:
+def run_command(cmd: list[str], timeout: int = 1800) -> dict[str, str]:
     try:
         result = subprocess.run(cmd, capture_output=True, text=True, timeout=timeout)
         return {
@@ -486,7 +486,7 @@ async def call_tool(name: str, arguments: dict[str, Any]) -> list[types.TextCont
         result = run_command(
             [COPILOT_BIN, "--model", model, "--effort", effort,
              "--allow-all-tools", "--silent", "-p", full_prompt],
-            timeout=600,
+            timeout=1800,
         )
         output = result["stdout"]
 
@@ -530,7 +530,7 @@ async def call_tool(name: str, arguments: dict[str, Any]) -> list[types.TextCont
         result = run_command(
             [COPILOT_BIN, "--model", model, "--effort", effort,
              "--allow-all-tools", "--silent", "-p", full_prompt],
-            timeout=600,
+            timeout=1800,
         )
         output = result["stdout"]
 
