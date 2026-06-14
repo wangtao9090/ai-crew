@@ -2,7 +2,7 @@
   "manifest_version": "0.3",
   "name": "ai-crew",
   "display_name": "AI Crew — Copilot + Gemini",
-  "version": "0.2.2",
+  "version": "0.3.0",
   "description": "把 GitHub Copilot CLI 与 Gemini CLI 封装成 MCP 工具：代码审查、技术调研、文档生成，以及小说去 AI 味/增人味（novel_deai，走 copilot 的 gemini-3.1-pro-preview）。需本机已安装并登录 GitHub Copilot CLI（~/.local/bin/copilot）。",
   "author": {
     "name": "wangtao"
