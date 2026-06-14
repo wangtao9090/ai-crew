@@ -1,0 +1,49 @@
+{
+  "manifest_version": "0.3",
+  "name": "ai-crew",
+  "display_name": "AI Crew — Copilot + Gemini",
+  "version": "0.2.0",
+  "description": "把 GitHub Copilot CLI 与 Gemini CLI 封装成 MCP 工具：代码审查、技术调研、文档生成，以及小说去 AI 味/增人味（novel_deai，走 copilot 的 gemini-3.1-pro-preview）。需本机已安装并登录 GitHub Copilot CLI（~/.local/bin/copilot）。",
+  "author": {
+    "name": "wangtao"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wangtao9090/ai-crew.git"
+  },
+  "server": {
+    "type": "uv",
+    "entry_point": "server.py",
+    "mcp_config": {
+      "command": "uv",
+      "args": [
+        "run",
+        "--with",
+        "mcp",
+        "--python",
+        "3.11",
+        "python",
+        "${__dirname}/server.py"
+      ],
+      "env": {
+        "PATH": "${HOME}/.local/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/bin:/bin"
+      }
+    }
+  },
+  "tools": [
+    { "name": "copilot", "description": "GitHub Copilot CLI 通用编程任务：解释、重构建议、技术调研" },
+    { "name": "copilot_review", "description": "专用 Code Review，冷酷模式，强制 [FILE:LINE] SEVERITY 格式" },
+    { "name": "novel_deai", "description": "中文小说去 AI 味/增人味改写（gemini-3.1-pro-preview，effort=high），保留情节/人物/视角/篇幅" },
+    { "name": "gemini_research", "description": "Gemini CLI 技术调研，报告落地文件只回摘要" },
+    { "name": "gemini_analyze_file", "description": "Gemini CLI 分析本地文件，结果落地文件" },
+    { "name": "gemini_write_doc", "description": "Gemini 生成/更新 .md 文档" }
+  ],
+  "keywords": ["copilot", "gemini", "code-review", "novel", "去AI味", "deai"],
+  "compatibility": {
+    "platforms": ["darwin"],
+    "runtimes": {
+      "python": ">=3.10"
+    }
+  }
+}

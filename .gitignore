@@ -16,6 +16,9 @@ oauth_creds.json
 *.token
 .env
 
+# .mcpb 打包暂存目录（产物在 dist/，暂存不入库）
+build/
+
 # macOS
 .DS_Store
 
